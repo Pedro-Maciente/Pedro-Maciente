@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="mailto:pedrohenriquemaciente@gmail.com">Contato</a> ·
-  <a href="https://www.linkedin.com/in/pedromaciente">LinkedIn</a> ·
+  <a href="https://www.linkedin.com/in/pedromaciente">LinkedIn</a> 
 </p>
 
 ## O que eu entrego
