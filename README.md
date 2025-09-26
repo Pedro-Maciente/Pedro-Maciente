@@ -13,6 +13,6 @@
 
 ## Produto em destaque
 - **n8n Creation Agent** — Agentes de IA para atendimento / Agente Social Media / Agente de trafego pago.
-  🔗 Repositório: <a href="https://github.com/Pedro-Maciente/n8n-creation-agent">github.com/Pedro-Maciente/n8n-creation-agent</a>
+
 
 > Minas Gerais, Brasil — disponível para projetos e consultoria.
