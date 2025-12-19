@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --primary: #d4a053;
+    --primary-strong: #f7c266;
+    --accent: #22d3ee;
+    --bg-main: #0a0e17;
+    --bg-elevated: #131820;
+    --bg-soft: #1a1f2e;
+    --border: #252d3f;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --danger: #ef4444;
+    --success: #22c55e;
+}
+
+html, body, [class*="css"], .stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(212, 160, 83, 0.06), transparent 40%),
+        radial-gradient(circle at 85% 10%, rgba(34, 211, 238, 0.04), transparent 35%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.block-container {
+    padding: 1.5rem 2rem 3rem !important;
+    max-width: 1400px !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header: keep collapse control visible */
+header[data-testid="stHeader"] {
+    background: linear-gradient(90deg, rgba(10, 14, 23, 0.85), rgba(10, 14, 23, 0.75));
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header [data-testid="stSidebarCollapseButton"] {
+    color: var(--text-main) !important;
+    border: 1px solid var(--border) !important;
+    background: var(--bg-soft) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+header [data-testid="stSidebarCollapseButton"]:hover {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Hide Streamlit utility chrome */
+.stDeployButton, 
+[data-testid="stDecoration"],
+footer,
+#MainMenu,
+[data-testid="stStatusWidget"] {
+    display: none !important;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0f1419 0%, #161b24 100%) !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    background: transparent !important;
+}
+
+[data-testid="stSidebar"] img {
+    margin: 0 auto 1rem;
+    display: block;
+    max-width: 75%;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.stRadio > label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stRadio div[role="radiogroup"] {
+    gap: 6px;
+}
+
+.stRadio label {
+    padding: 11px 16px !important;
+    border-radius: 8px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+    font-size: 0.9rem !important;
+}
+
+.stRadio label:hover {
+    color: var(--text-main) !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border-color: var(--border) !important;
+}
+
+.stRadio label[data-baseweb="radio"] > div:first-child {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+div[role="radiogroup"] label[data-baseweb="radio"]:has(input:checked) {
+    color: var(--primary) !important;
+    background: rgba(212, 160, 83, 0.08) !important;
+    border-color: rgba(212, 160, 83, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif !important;
+    color: var(--text-main) !important;
+    letter-spacing: -0.02em;
+    font-weight: 700 !important;
+}
+
+h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.5rem !important;
+    color: var(--primary) !important;
+}
+
+h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Inputs */
+.stTextInput input,
+.stSelectbox div[data-baseweb="select"] > div,
+.stDateInput input,
+.stNumberInput input,
+.stTextArea textarea {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-main) !important;
+    border-radius: 8px !important;
+    padding: 0 12px !important;
+    font-size: 0.9rem !important;
+    transition: all 0.2s ease;
+    height: 44px !important;
+}
+
+.stTextArea textarea {
+    min-height: 120px !important;
+    padding: 12px !important;
+}
+
+.stTextInput input:focus,
+.stSelectbox div[data-baseweb="select"] > div:focus-within,
+.stDateInput input:focus,
+.stNumberInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 2px rgba(212, 160, 83, 0.15) !important;
+}
+
+.stTextInput label,
+.stSelectbox label,
+.stDateInput label,
+.stNumberInput label,
+.stTextArea label {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 0.4rem !important;
+}
+
+ul[data-baseweb="menu"] {
+    background-color: var(--bg-soft) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+li[data-baseweb="option"] {
+    color: var(--text-main) !important;
+    padding: 10px 12px !important;
+}
+
+li[aria-selected="true"],
+li[data-baseweb="option"]:hover {
+    background-color: rgba(212, 160, 83, 0.12) !important;
+    color: var(--primary) !important;
+}
+
+[data-testid="stFileUploadDropzone"] {
+    background: var(--bg-elevated) !important;
+    border: 1.5px dashed var(--border) !important;
+    border-radius: 10px !important;
+    color: var(--text-muted) !important;
+    padding: 1.5rem !important;
+}
+
+[data-testid="stFileUploadDropzone"]:hover {
+    border-color: var(--primary) !important;
+}
+
+/* Buttons */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%) !important;
+    color: #0f1419 !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: none !important;
+    height: 44px !important;
+    padding: 0 24px !important;
+    box-shadow: 0 4px 12px rgba(212, 160, 83, 0.3);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(212, 160, 83, 0.4);
+    filter: brightness(1.05);
+}
+
+.stButton > button:active {
+    transform: translateY(0px);
+}
+
+button[kind="secondary"] {
+    background: transparent !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-muted) !important;
+    box-shadow: none !important;
+}
+
+button[kind="secondary"]:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: var(--danger) !important;
+    color: var(--danger) !important;
+}
+
+/* Cards and containers */
+[data-testid="stVerticalBlockBorderWrapper"],
+.panel {
+    background: linear-gradient(135deg, rgba(19, 24, 32, 0.6), rgba(26, 31, 46, 0.4));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Metrics */
+[data-testid="stMetric"] {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 0.85rem !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--primary-strong) !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+/* Tabs */
+button[role="tab"] {
+    background: transparent !important;
+    color: var(--text-muted) !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease;
+}
+
+button[role="tab"]:hover {
+    color: var(--text-main) !important;
+}
+
+button[role="tab"][aria-selected="true"] {
+    color: var(--primary) !important;
+    border-bottom-color: var(--primary) !important;
+}
+
+/* Tables */
+.dataframe {
+    border: none !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+.dataframe thead {
+    background: var(--bg-soft) !important;
+}
+
+.dataframe th {
+    background: var(--bg-soft) !important;
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 16px !important;
+    border: none !important;
+}
+
+.dataframe td {
+    background: var(--bg-elevated) !important;
+    color: var(--text-main) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding: 14px 16px !important;
+    font-size: 0.9rem !important;
+}
+
+.dataframe tr:hover td {
+    background: rgba(212, 160, 83, 0.05) !important;
+}
+
+/* Custom chips */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    letter-spacing: 0.3px;
+    font-weight: 500;
+}
+
+.chip::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--chip-color, #94a3b8);
+    box-shadow: 0 0 8px var(--chip-color, #94a3b8);
+}
+
+.history-card {
+    background: linear-gradient(135deg, rgba(19, 24, 32, 0.8), rgba(26, 31, 46, 0.6));
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.history-card:hover {
+    border-color: rgba(212, 160, 83, 0.3);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.history-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.history-card__date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.history-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.history-card__id {
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.history-card__text {
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Alerts, divider, caption */
+.stAlert {
+    border-radius: 8px !important;
+    border: 1px solid var(--border) !important;
+}
+
+hr {
+    margin: 1.5rem 0 !important;
+    border-color: var(--border) !important;
+}
+
+.stCaption {
+    color: var(--text-muted) !important;
+    font-size: 0.8rem !important;
+}
