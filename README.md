@@ -17,8 +17,6 @@ Entrego o produto e a rotina que faz ele funcionar. A tela, o fluxo por trás e 
 ## Em produção
 
 - **SENA COFFEE.** Gestão da safra de café especial, do campo à xícara. Colheita, beneficiamento, armazém e venda, com rastreio lote a lote, no celular.
-- **Tullye.** Comunidade para criadoras e fãs. Feed, mídia e vídeo curto.
-- **Série animada.** Modelo, rig, animação, áudio e episódio pronto para publicar.
 - **Atendimento.** Bot de Telegram com pagamento e página que pede orçamento no WhatsApp.
 
 ## Como eu trabalho
